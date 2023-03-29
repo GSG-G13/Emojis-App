@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const app = express();
 app.disable('x-powered-by');
-app.set('port', process.env.PORT);
+app.set('port', process.env.PORT || 3000);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
