@@ -1,10 +1,12 @@
 const fetch = require('./helpers');
-const {search}= require('./utils');
+const {search,limit}= require('./utils');
 
 const api = 'https://emojihub.yurace.pro/api/';
 const getAllEmojis = (req, response) => {
-  fetch(`${api}/all`)
-    .catch(console.log);
+  fetch(`${api}all`)  
+  .then(res => limit(res))
+  .then(output => response.send(output))
+  .catch(console.log);
 };
 const getGroupes = (req, res) => {
   fetch(`${api}all/group/${req.params.group}`)
