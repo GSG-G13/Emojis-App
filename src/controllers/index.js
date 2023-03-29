@@ -1,15 +1,25 @@
-const { writeFileSync } = require('fs');
-const { join } = require('path');
 const fetch = require('./helpers');
 const {search}= require('./utils');
 
-const getAllEmojis =(req, response) => {
-  fetch('https://emojihub.yurace.pro/api/all')
- .then(res => response.send(res));
+const api = 'https://emojihub.yurace.pro/api/';
+const getAllEmojis = (req, response) => {
+  fetch(`${api}/all`)
+    .catch(console.log);
+};
+const getGroupes = (req, res) => {
+  fetch(`${api}all/group/${req.params.group}`)
+    .then((data) => res.send(data))
+    .catch(console.log);
+};
+
+const getCatogry = (req, res) => {
+  fetch(`${api}all/category/${req.params.category}`)
+    .then((data) => res.send(data))
+    .catch(console.log);
 };
 
 const getSearchedEmojis = (req,response)=>{
-  fetch('https://emojihub.yurace.pro/api/all')
+  fetch(`${api}/all`)
   .then(res => search(res, req.params.value))
   .then(output => response.send(output));
 }
@@ -18,4 +28,6 @@ const getSearchedEmojis = (req,response)=>{
 module.exports = {
   getAllEmojis,
   getSearchedEmojis,
+  getGroupes,
+  getCatogry,
 };
