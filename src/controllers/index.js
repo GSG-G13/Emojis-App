@@ -1,16 +1,21 @@
 const { writeFileSync } = require('fs');
 const { join } = require('path');
-const axios = require('axios');
-// const {}
-const getAllEmojis = (req, response) => {
-  axios.get('https://emojihub.yurace.pro/api/all')
-    .then((res) => {
-      console.log(res.data);
-      response.end(JSON.stringify(res.data));
-    })
-    .catch((err) => console.log(err));
+const fetch = require('./helpers');
+const {search}= require('./utils');
+
+const getAllEmojis =(req, response) => {
+  fetch('https://emojihub.yurace.pro/api/all')
+ .then(res => response.send(res));
 };
+
+const getSearchedEmojis = (req,response)=>{
+  fetch('https://emojihub.yurace.pro/api/all')
+  .then(res => search(res, req.params.value))
+  .then(output => response.send(output));
+}
+
 
 module.exports = {
   getAllEmojis,
+  getSearchedEmojis,
 };

@@ -11,7 +11,5 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "linebreak-style": 0,
-        "eslint-disable-next-line": "no-unused-vars"
     }
 }
