@@ -7,7 +7,7 @@ const createCard = (data) => {
     const card = document.createElement('div');
     card.classList.add('card');
 
-    const emoji = document.createElement('h2');
+    const emoji = document.createElement('div');
     emoji.classList.add('emoji');
     // eslint-disable-next-line prefer-destructuring
     emoji.innerHTML = element.htmlCode[0];
@@ -16,11 +16,11 @@ const createCard = (data) => {
     name.classList.add('name');
     name.textContent = element.name;
 
-    const categoryName = document.createElement('h4');
+    const categoryName = document.createElement('p');
     categoryName.classList.add('category');
     categoryName.textContent = element.category;
 
-    const group = document.createElement('h4');
+    const group = document.createElement('p');
     group.classList.add('group');
     group.textContent = element.group;
 
