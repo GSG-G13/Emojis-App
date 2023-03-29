@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const fetch = require('./helpers');
 const { search, limit } = require('./utils');
 
