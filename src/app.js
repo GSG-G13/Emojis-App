@@ -1,10 +1,12 @@
 const express = require('express');
 const { join } = require('path');
 const routes = require('./routes');
+// eslint-disable-next-line import/no-extraneous-dependencies
+require('dotenv').config();
 
 const app = express();
 app.disable('x-powered-by');
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

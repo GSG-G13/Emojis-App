@@ -18,6 +18,8 @@ filterBtn.addEventListener('click', (e) => {
   } else if (groups.value) {
     fetchFunc(`/groups/${groups.value}`)
       .then(createCard);
+  } else {
+    fetchFunc('/Emojis').then((res) => createCard(res));
   }
 });
 
