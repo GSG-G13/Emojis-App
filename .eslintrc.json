@@ -6,13 +6,12 @@
         "node": true
     },
     "extends": "airbnb-base",
-    "overrides": [
-    ],
+    "overrides": [],
     "parserOptions": {
         "ecmaVersion": "latest"
     },
     "rules": {
         "linebreak-style": 0,
-        "eslint-disable-next-line":"no-unused-vars"
+        "eslint-disable-next-line": "no-unused-vars"
     }
 }
