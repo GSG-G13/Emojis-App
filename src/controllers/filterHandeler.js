@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
+// const express = require('express');
+// const router = express.Router();
 
-router.get('/groups/:group',(req,res) => {
+// router.get('/groups/:group',(req,res) => {
     
-})
+// })
