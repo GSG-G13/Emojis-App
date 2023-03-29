@@ -1,5 +1,4 @@
 const express = require('express');
-const fetch = require('../controllers/helpers');
 
 const { Router } = express;
 
@@ -12,7 +11,7 @@ const {
   getCatogry,
 } = require('../controllers');
 
-router.get('/Emojis',getAllEmojis);
+router.get('/Emojis', getAllEmojis);
 
 router.get('/Emojis/:value', getSearchedEmojis);
 
