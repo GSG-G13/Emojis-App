@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const fetch = require('./helpers');
 const { search, limit } = require('./utils');
 
@@ -27,7 +28,6 @@ const getSearchedEmojis = (req, response) => {
     .then((res) => search(res, req.params.value))
     .then((output) => response.send(output));
 };
-
 module.exports = {
   getAllEmojis,
   getSearchedEmojis,
