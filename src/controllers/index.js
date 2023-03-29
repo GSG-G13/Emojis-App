@@ -27,7 +27,6 @@ const getSearchedEmojis = (req, response) => {
     .then((res) => search(res, req.params.value))
     .then((output) => response.send(output));
 };
-
 module.exports = {
   getAllEmojis,
   getSearchedEmojis,
