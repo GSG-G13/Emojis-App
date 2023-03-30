@@ -1,12 +1,14 @@
-/* eslint-disable no-use-before-define */
 /* eslint-disable no-shadow */
-/* eslint-disable prefer-template */
+/* eslint-disable no-use-before-define */
+/* eslint-disable prefer-const */
 /* eslint-disable no-param-reassign */
-
+/* eslint-disable prefer-template */
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const p404 = () => {
-  let emojiEl; let emojiBlock4 = ''; let emojiBlock0 = '';
+  let emojiEl;
+  let emojiBlock4 = '';
+  let emojiBlock0 = '';
 
   for (let i = 1; i < 13; i += 1) {
     emojiEl = "<span class='emoji emoji" + i + "'>&#1285" + getRandomInt(13, 67) + ';</span>';
@@ -27,7 +29,7 @@ const p404 = () => {
     },
   );
 
-  const ball = document.querySelectorAll('.emoji');
+  let ball = document.querySelectorAll('.emoji');
   ball.forEach(
     (el) => {
       el.onmousedown = (e) => {
@@ -48,7 +50,10 @@ const p404 = () => {
           el.onmouseup = null;
         };
       };
-      el.ondragstart = () => false;
+      // eslint-disable-next-line arrow-body-style
+      el.ondragstart = () => {
+        return false;
+      };
     },
   );
 };
