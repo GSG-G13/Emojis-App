@@ -26,5 +26,15 @@ filterBtn.addEventListener('click', (e) => {
 searchBtn.addEventListener('click', (e) => {
   e.preventDefault();
   fetchFunc(`/Emojis/${searchInput.value}`)
-    .then((res) => createCard(res));
+    .then((res) => {
+      if (res.length < 1) {
+        const notfound = [{
+          category: 'sorry this Emojy is not found',
+          htmlCode: ['&#x1F640;'],
+          name: ' not found ',
+        }];
+        return createCard(notfound);
+      }
+      return createCard(res);
+    });
 });
